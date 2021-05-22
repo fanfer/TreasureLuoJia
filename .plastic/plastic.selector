@@ -1,0 +1,4 @@
+repository "TreasureLuoJia@ssl://fanfers@sh02-plasticscm.unity.cn:8787"
+  path "/"
+    smartbranch "/main/2284121004" 
+     

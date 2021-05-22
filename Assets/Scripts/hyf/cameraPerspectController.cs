@@ -39,4 +39,6 @@ public class cameraPerspectController : MonoBehaviour
             print("is first pespect!");
         }
     }
+        
+    
 }

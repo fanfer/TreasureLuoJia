@@ -64,10 +64,11 @@ namespace UnityChan
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
 		}
-	
-	
-		// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
-		void FixedUpdate ()
+
+
+        // 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
+        [System.Obsolete]
+        void FixedUpdate ()
 		{
 			float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 			float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
@@ -189,6 +190,7 @@ namespace UnityChan
 			GUI.Label (new Rect (Screen.width - 245, 130, 250, 30), "Alt : LookAt Camera");
 		}
 
+        [System.Obsolete]
         private void Update()
         {
 			if (Input.GetButtonDown("Jump"))
