@@ -33,7 +33,7 @@ public class IronBars : MonoBehaviour
         if (transform.position.y<=maxY)
         {
         //print("Lift is working!");
-        transform.position = new Vector3(transform.position.x,transform.position.y+0.1f, transform.position.z);
+        transform.position = new Vector3(transform.position.x,transform.position.y+0.04f, transform.position.z);
         
         }
     }
@@ -43,7 +43,7 @@ public class IronBars : MonoBehaviour
     {
         while(transform.position.y >= startY)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z);
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 0.02f, transform.position.z);
 
         }
     }

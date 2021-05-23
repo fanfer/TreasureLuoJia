@@ -9,6 +9,8 @@ public class bridgeController : MonoBehaviour
     private float y=20;
     public float resovleSpeed = 0.5f;
 
+    private bool isResolving = true;
+
     public 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,15 @@ public class bridgeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         resolve();
+        if (isResolving)
+        {
+            resolve();
+        }
+         
     }
 
    
-
+    //Ðý×ª
     public void resolve()
     {
         if (x==360||y==360)
@@ -33,7 +39,13 @@ public class bridgeController : MonoBehaviour
         x = x + resovleSpeed;
         y = y + resovleSpeed;
         transform.rotation = Quaternion.Euler(new Vector3(x, y, 0));
-     
+    }
+
+    //µÀÂ·»Ö¸´
+    public void recover()
+    {
+        isResolving = false;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
 }
