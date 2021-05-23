@@ -6,7 +6,7 @@ public class cameraPerspectController : MonoBehaviour
 {
     public bool isThirdPespect;
     //第三人称视角到第一人称视角的偏移量
-    private Vector3 offsetPosition = new Vector3(0, -0.6f, 3f);
+    private Vector3 offsetPosition = new Vector3(0, -0.6f, 3.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +16,16 @@ public class cameraPerspectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //设置K键改变视角
-        if (Input.GetKey(KeyCode.K))
+        //设置K键改变视角的人称
+        if (Input.GetKeyDown(KeyCode.K))
         {
             changePerspect();
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            upRotation();
+        }
+        
 
     }
     
@@ -38,6 +43,17 @@ public class cameraPerspectController : MonoBehaviour
             isThirdPespect = !isThirdPespect;
             print("is first pespect!");
         }
+    }
+
+    public void upRotation()
+    {
+        transform.rotation =  Quaternion.Euler(new Vector3(-32f,0,0));
+        Invoke("downRotation",10f);
+    }
+
+    public void downRotation()
+    {
+        transform.rotation = Quaternion.Euler(new Vector3(4.8f, 0, 0));
     }
         
     
