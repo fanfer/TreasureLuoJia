@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MagicCircle01 : MonoBehaviour
 {
+
+    public AudioSource hengheng;
     public waterController water;
     public IronBars ironBars;
     // Start is called before the first frame update
@@ -22,10 +24,18 @@ public class MagicCircle01 : MonoBehaviour
         ironBars.SendMessage("Lift");
         water.SendMessage("Down");
         print("up!");
+        
     }
-  /*  public void OnTriggerExit(Collider other)w
+    private void OnTriggerEnter(Collider other)
     {
-        ironBars.SendMessage("Down");
-        print("down!");
-    }*/
+        hengheng.Play();
+    }
+
+
+    /*  public void OnTriggerExit(Collider other)w
+      {
+          ironBars.SendMessage("Down");
+          print("down!");
+      }*/
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class platformController : MonoBehaviour
 {
+
+    public AudioSource AudioSource;
     public float minY;
     public ParticleSystem fire1;
     public ParticleSystem fire2;
@@ -39,5 +41,14 @@ public class platformController : MonoBehaviour
     {
         fire1.Play();
         fire2.Play();
+        AudioSource.Play();
+        Invoke("stopFire", 15f);
+    }
+
+    public void stopFire()
+    {
+        fire1.Stop();
+        fire2.Stop();
+        AudioSource.Stop();
     }
 }

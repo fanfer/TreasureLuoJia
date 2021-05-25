@@ -48,7 +48,7 @@ public class cameraPerspectController : MonoBehaviour
     public void upRotation()
     {
         transform.rotation =  Quaternion.Euler(new Vector3(-32f,0,0));
-        Invoke("downRotation",10f);
+        Invoke("downRotation",15f);
     }
 
     public void downRotation()
