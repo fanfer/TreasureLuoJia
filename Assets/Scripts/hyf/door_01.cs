@@ -27,7 +27,7 @@ public class door_01 : MonoBehaviour
     {
         if (transform.position.y>=minY)
         {
-            transform.position = new Vector3(transform.position.x,transform.position.y-0.002f,transform.position.z);
+            transform.position = new Vector3(transform.position.x,transform.position.y-0.05f,transform.position.z);
 
         }
     }
