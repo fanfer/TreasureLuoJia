@@ -9,7 +9,7 @@ public class platformController : MonoBehaviour
     public float minY;
     public ParticleSystem fire1;
     public ParticleSystem fire2;
-    public cameraPerspectController camera;
+    public cameraPerspectController camera1;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class platformController : MonoBehaviour
         {
             InvokeRepeating("Down", 2f,0.1f);
             playFire();
-            camera.SendMessage("upRotation");
+            camera1.SendMessage("upRotation");
         }
     }
 
