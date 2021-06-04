@@ -9,8 +9,9 @@ public class platformController : MonoBehaviour
     public float minY;
     public ParticleSystem fire1;
     public ParticleSystem fire2;
-    public cameraPerspectController camera1;
-    
+    public cameraPerspectController camera;
+    public wallController[] wallControllers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,9 @@ public class platformController : MonoBehaviour
         {
             InvokeRepeating("Down", 2f,0.1f);
             playFire();
-            camera1.SendMessage("upRotation");
+            camera.SendMessage("upRotation");
+            //“∆∂Ø∏Ù«Ω
+            InvokeRepeating("moveWalls", 3f, 0.1f);
         }
     }
 
@@ -50,5 +53,11 @@ public class platformController : MonoBehaviour
         fire1.Stop();
         fire2.Stop();
         AudioSource.Stop();
+    }
+
+    public void moveWalls()
+    {
+        wallControllers[0].SendMessage("moveRight");
+        wallControllers[1].SendMessage("moveRight");
     }
 }
