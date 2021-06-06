@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class npc01 : MonoBehaviour
 {
+    /*
+    public Texture img1;
+    public Texture img2;
+    public Texture img3;
+    public Texture img4;
+    public Texture img5;
+
+    */
+    public GUIStyle style;
+
+
     public bool can_talk = false;
     public int count = 0;
     public bool ins = false;
@@ -11,7 +22,11 @@ public class npc01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        style.fontSize = 20;
+        style.normal.textColor = new Color(255, 255, 255);
+
+
     }
 
     // Update is called once per frame
@@ -57,20 +72,24 @@ public class npc01 : MonoBehaviour
         if (can_talk)
 
         {
-            if (ins == true)
+            if (ins == true&&count==0)
             {
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "Press T to talk with me");
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 500, 300), "Press the T key",style);
+
                 
             }
-              
-            if (count==1)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "欢迎你whuer来到珞珈虚拟世界  伴whuer一程，三生有幸");
-             if(count==2)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "whuer可以通过关卡，集齐whu碎片，达成成就哦");
+
+            if (count == 1)
+            {
+                ins = false;
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "欢迎你whuer来到珞珈虚拟世界  伴whuer一程，三生有幸",style);
+            }
+                if(count==2)
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "whuer可以通过关卡，集齐whu碎片，达成成就哦", style);
             if (count == 3)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "途中如果遇到我的朋友，请尽情去撩，它会帮助你");
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "途中如果遇到我的朋友，请尽情去撩，它会帮助你", style);
              if (count == 4)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "出发吧，whuer!");
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "出发吧，whuer!", style);
         }
 
     }
