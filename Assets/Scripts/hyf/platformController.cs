@@ -5,10 +5,9 @@ using UnityEngine;
 public class platformController : MonoBehaviour
 {
 
-    public AudioSource AudioSource;
+
     public float minY;
-    public ParticleSystem fire1;
-    public ParticleSystem fire2;
+ 
     public cameraPerspectController camera;
     public wallController[] wallControllers;
 
@@ -21,14 +20,16 @@ public class platformController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
+        
+    }
+
+    public void characterPressT()
+    {
             InvokeRepeating("Down", 2f,0.1f);
-            playFire();
+           // playFire();
             camera.SendMessage("upRotation");
             //“∆∂Ø∏Ù«Ω
             InvokeRepeating("moveWalls", 3f, 0.1f);
-        }
     }
 
     public void Down()
@@ -40,8 +41,9 @@ public class platformController : MonoBehaviour
         }
     }
 
-    public void playFire()
+    /*public void playFire()
     {
+        print("firework! ");
         fire1.Play();
         fire2.Play();
         AudioSource.Play();
@@ -54,7 +56,7 @@ public class platformController : MonoBehaviour
         fire2.Stop();
         AudioSource.Stop();
     }
-
+*/
     public void moveWalls()
     {
         wallControllers[0].SendMessage("moveRight");

@@ -14,7 +14,7 @@ public class npc01 : MonoBehaviour
     */
     public GUIStyle style;
 
-
+    public AudioSource audio;
     public bool can_talk = false;
     public int count = 0;
     public bool ins = false;
@@ -51,6 +51,7 @@ public class npc01 : MonoBehaviour
         {
             can_talk = true;
             Debug.Log("OnCollisionEnterÅö×²´¥·¢");
+            audio.Play();
             ins=true;
           
         }

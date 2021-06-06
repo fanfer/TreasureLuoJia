@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class wallController : MonoBehaviour
 {
-    private float maxZ;
+    private float minY;
     // Start is called before the first frame update
     void Start()
     {
-        maxZ = transform.position.z + 3f;
+        minY = transform.position.y - 7.8f;
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class wallController : MonoBehaviour
 
     public void moveRight()
     {
-        if (transform.position.z<=maxZ)
+        if (transform.position.z>=minY)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y-0.1f, transform.position.z );
         }
     }
 }
