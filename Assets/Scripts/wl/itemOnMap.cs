@@ -29,3 +29,11 @@ public class itemOnMap : MonoBehaviour
         InventoryManager.RefreshItem();
     }
 }
+
+
+
+
+
+
+
+

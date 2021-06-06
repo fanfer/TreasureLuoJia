@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class InventoryManager : MonoBehaviour
     {
         RefreshItem();
     }
-    public static void CreateNewItem(Items item) 
+    public static void CreateNewItem(Items item)
     {
         slot newItem = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion identity);
         newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
@@ -33,14 +34,14 @@ public class InventoryManager : MonoBehaviour
 
     public static void RefreshItem()
     {
-        for(int i = 0; i < instance.slotGrid.transform.childCount; i++)
+        for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
         {
             if (instance.slotGrid.transform.childCount == 0)
                 break;
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
         }
 
-        for(int i = 0; i < instance.mybag.itemList.Count; i++)
+        for (int i = 0; i < instance.mybag.itemList.Count; i++)
         {
             CreateNewItem(instance.mybag.itemList[i]);
         }
