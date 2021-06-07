@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class itemOnMap : MonoBehaviour
+public class itemInMap : MonoBehaviour
 {
     public Items thisItem;
     public Inventory playerInventory;
@@ -12,12 +12,13 @@ public class itemOnMap : MonoBehaviour
         if (collision.gameObject.name == "unitychan")
         {
             AddNewItem();
+            Destroy(gameObject);
         }
     }
 
     public void AddNewItem()
     {
-        if (playerInventory.itemList.Contains(thisItem))
+        if (!playerInventory.itemList.Contains(thisItem))
         {
             playerInventory.itemList.Add(thisItem);
         }
@@ -25,15 +26,6 @@ public class itemOnMap : MonoBehaviour
         {
             thisItem.itemHeld += 1;
         }
-
-        InventoryManager.RefreshItem();
+        InventoryManage.RefreshItem();
     }
 }
-
-
-
-
-
-
-
-
