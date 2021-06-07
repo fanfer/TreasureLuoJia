@@ -7,7 +7,7 @@ public class Maincharacter : MonoBehaviour
     public AudioSource audio;
     public AudioSource audio02;
 
-    public wallController[] wallControllers;
+    /*public wallController[] wallControllers;*/
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +29,10 @@ public class Maincharacter : MonoBehaviour
         }
 
         //临时使用打开侧门
-        if (Input.GetKeyDown(KeyCode.U))
+      /*  if (Input.GetKeyDown(KeyCode.U))
         {
             InvokeRepeating("moveWalls",3f,0.1f);
-        }
+        }*/
         
     }
 
@@ -41,11 +41,11 @@ public class Maincharacter : MonoBehaviour
         audio.Play();
     }
 
-    public void moveWalls()
+   /* public void moveWalls()
     {
         wallControllers[0].SendMessage("moveRight");
         wallControllers[1].SendMessage("moveRight");
-    }
+    }*/
 
     
 }
