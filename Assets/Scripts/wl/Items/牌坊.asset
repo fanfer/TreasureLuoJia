@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab167309a10bf2d48900d52c73abdb2b, type: 3}
-  m_Name: "\u661F\u6E56"
+  m_Name: "\u724C\u574A"
   m_EditorClassIdentifier: 
-  itemName: "\u661F\u6E56"
-  itemImage: {fileID: 21300000, guid: fe93817d23e5bbe4b902461f86bbc4f6, type: 3}
+  itemName: "\u724C\u574A"
+  itemImage: {fileID: 21300000, guid: 367e0279faa49414aa909a5f2e0b9b45, type: 3}
   itemHeld: 1
-  itemInfo: "\u53F6\u843D\u65E0\u58F0\u6E56\u6C34\u660E, \u6620\u5929\u6620\u6811\u6620\u6865\u4EAD\u3002"
+  itemInfo: "\u6C5F\u6C49\u6625\u98CE\u4E00\u674F\u575B\uFF0C\u73DE\u73C8\u5C71\u4E0A\u6709\u9F99\u76D8\uFF0C\u6885\u82B1\u9999\u91CC\u591A\u624D\u4FCA\uFF0C\u5C82\u602F\u4EBA\u95F4\u94F8\u4E07\u96BE\u3002"

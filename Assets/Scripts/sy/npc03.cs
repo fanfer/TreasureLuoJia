@@ -7,6 +7,7 @@ public class npc03 : MonoBehaviour
     public bool can_talk;
     public int count = 0;
     public GUIStyle style;
+    public AudioSource audio_message;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,10 @@ public class npc03 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
+                if (count <= 4)
+                {
+                    audio_message.Play();
+                }
                 count++;
             }
         }
@@ -54,7 +59,7 @@ public class npc03 : MonoBehaviour
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "珞珞如玉，珈珈如石，是为珞珈", style);
             if (count == 4)
             {
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "不管何时，都欢迎回珈", style);
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "不知道whuer的碎片有没有收集成功呢？", style);
             }
             /*
             if (count == 5)

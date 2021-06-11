@@ -7,6 +7,7 @@ public class npc02 : MonoBehaviour
     public bool can_talk = false;
     public int count = 0;
     public GUIStyle style;
+    public AudioSource audio_message;
 
     //hyf:烟花
     public AudioSource AudioSource;
@@ -37,6 +38,16 @@ public class npc02 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
+                if (count <= 5)
+                {
+                    audio_message.Play();
+                }
+                if (count == 6)
+                {
+                    //烟花
+                    playFire();
+                    platform.SendMessage("characterPressT");
+                }
                 count++;
             }
         }
@@ -57,18 +68,16 @@ public class npc02 : MonoBehaviour
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "听说，来武大看一次人海，是每朵樱花的梦想", style);
             if (count == 3)
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "给whuer看一场烟花，是我的梦想", style);
+            /*
             if (count == 6)
             {
-                //烟花
-                playFire();
-                platform.SendMessage("characterPressT");
-
                 //捡碎片
             }
+            */
             if (count == 4)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "恭喜whuer又收获新的碎片！", style);
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "一会不要忘记收集新的碎片哦！", style);
             if (count == 5)
-                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "哦对了，不要放过遇见过的魔法阵哦，去找找新发现吧", style);
+                GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "看完烟花记得去看看魔法阵有什么变化呀", style);
      
         }
        

@@ -23,6 +23,12 @@ public class testSkybox : MonoBehaviour
         index++;
         index %= mats.Length;
     }
+
+    void ChangeMoonSky()
+    {
+        RenderSettings.skybox = mats[2];
+
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
