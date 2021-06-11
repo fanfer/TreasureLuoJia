@@ -30,7 +30,7 @@ public class platformController : MonoBehaviour
            // playFire();
             camera.SendMessage("upRotation");
             //“∆∂Ø∏Ù«Ω
-            InvokeRepeating("moveWalls", 3f, 0.1f);
+            InvokeRepeating("moveWalls", 3f, 0.1f); 
             testsky.SendMessage("ChangeMoonSky");
     }
 
