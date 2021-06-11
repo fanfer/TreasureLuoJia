@@ -10,6 +10,7 @@ public class platformController : MonoBehaviour
  
     public cameraPerspectController camera;
     public wallController[] wallControllers;
+    public testSkybox testsky;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class platformController : MonoBehaviour
             camera.SendMessage("upRotation");
             //“∆∂Ø∏Ù«Ω
             InvokeRepeating("moveWalls", 3f, 0.1f);
+            testsky.SendMessage("ChangeMoonSky");
     }
 
     public void Down()
