@@ -15,9 +15,11 @@ public class npc01 : MonoBehaviour
     public GUIStyle style;
 
     public AudioSource audio;
+    public AudioSource audio_message;
     public bool can_talk = false;
     public int count = 0;
     public bool ins = false;
+    
     // Start is called before the first frame update
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,10 @@ public class npc01 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.T))
                 {
                 count++;
+                if (count <= 4)
+                {
+                    audio_message.Play();
+                }
                 ins = false;
                 }
         }
@@ -83,14 +89,24 @@ public class npc01 : MonoBehaviour
             if (count == 1)
             {
                 ins = false;
+                //audio_message.Play();
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "欢迎你whuer来到珞珈虚拟世界  伴whuer一程，三生有幸",style);
             }
-                if(count==2)
+            if (count == 2)
+            {
+                //audio_message.Play();
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "whuer可以通过关卡，集齐whu碎片，达成成就哦", style);
+            }
             if (count == 3)
+            {
+                //audio_message.Play();
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "途中如果遇到我的朋友，请尽情去撩，它会帮助你", style);
-             if (count == 4)
+            }
+            if (count == 4)
+            {
+               // audio_message.Play();
                 GUI.Label(new Rect(Screen.width * 0.52f, (float)(Screen.height * 0.5), 300, 100), "出发吧，whuer!", style);
+            }
         }
 
     }
