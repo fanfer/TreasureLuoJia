@@ -8,7 +8,6 @@ public class ChangeSC : MonoBehaviour
 {
     public GameObject Play;
     public GameObject Rule;
-    public GameObject Setting;
     public GameObject Quit;
 
     // Start is called before the first frame update
@@ -16,7 +15,6 @@ public class ChangeSC : MonoBehaviour
     {
         Play.GetComponent<Button>().onClick.AddListener(StartPlay);
         Rule.GetComponent<Button>().onClick.AddListener(StartRule);
-        Setting.GetComponent<Button>().onClick.AddListener(StartSetting);
         Quit.GetComponent<Button>().onClick.AddListener(StartQuit);
     }
 
@@ -29,10 +27,6 @@ public class ChangeSC : MonoBehaviour
         SceneManager.LoadScene("intro");
     }
 
-    void StartSetting()
-    {
-        SceneManager.LoadScene("setting");
-    }
 
     void StartQuit()
     {
